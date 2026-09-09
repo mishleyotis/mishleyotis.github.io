@@ -71,7 +71,32 @@
     })();
   }
 
-  function init() { reveal(); tilt(); setTimeout(anchor, 60); }
+  /* Prototype apps: attach the iframe only as its card approaches the
+     viewport. These bundles are 2.4-4.7MB each and two sit on one page, so
+     they must not ride on the initial page load - and the native
+     loading="lazy" threshold fetched them anyway. */
+  function liveframes() {
+    var cards = [].slice.call(document.querySelectorAll('.liveframe[data-app]'));
+    if (!cards.length) return;
+    function attach(card) {
+      if (card.dataset.attached) return;
+      card.dataset.attached = '1';
+      var f = document.createElement('iframe');
+      f.src = card.getAttribute('data-app');
+      f.title = card.getAttribute('data-app-title') || 'Prototype';
+      f.setAttribute('loading', 'eager');
+      card.appendChild(f);
+    }
+    if (!('IntersectionObserver' in window)) { cards.forEach(attach); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { attach(e.target); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '300px 0px' });
+    cards.forEach(function (c) { io.observe(c); });
+  }
+
+  function init() { reveal(); tilt(); liveframes(); setTimeout(anchor, 60); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();

@@ -40,6 +40,16 @@ so the first painted frame is complete and the page still reads with
 JavaScript disabled. Delete the script and the page stays readable; the
 animation is what's lost.
 
+**The three prototype apps run in the page.** On `dma-insights.html` and
+`capability-intelligence.html` the browser-chrome card holds a real `<iframe>`
+of the app, not a screenshot. `assets/site.js` attaches the frame only as the
+card approaches the viewport — the native `loading="lazy"` was not enough, it
+still fetched several megabytes before the reader had scrolled anywhere near.
+The screenshot remains as the card's CSS background, so the card shows the
+right thing while the bundle unpacks, and is what a reader without JavaScript
+sees. Each bundle is 2.4–4.7MB, and two sit on one page, so this deferral is
+what keeps those pages light.
+
 **`work/` holds bundles, not pages.** Each unpacks itself at runtime and
 replaces the document. They're byte-sensitive — edit the source they were
 exported from, not these files.
