@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Knowledge agent connectors - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {}
+  @media print {}
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap;position:relative">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <div class="navdrop" style="position:relative;display:inline-block">
+          <a href="projects.html" style="color:#48706f">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:12px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#12595a;font-weight:500;background:#e8f7f6">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">Project management office knowledge agent</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-size:14px;flex-wrap:wrap">
+        <a href="#sources" style="color:#185f60">Sources</a>
+        <a href="#how" style="color:#185f60">How it works</a>
+        <a href="#lessons" style="color:#185f60">Lessons</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(36px,5vw,56px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 24px">Project 04 &nbsp;·&nbsp; Zennify &nbsp;·&nbsp; internal</p>
+    <h1 style="font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:400;margin:0 0 24px;max-width:24ch;text-wrap:pretty">Project management office knowledge agent</h1>
+    <p style="font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:#2c5f61;max-width:62ch;margin:0 0 40px;text-wrap:pretty">A knowledge retrieval agent that answers questions about how the delivery organisation actually runs. It reads from Google Sites, Google Drive, Slack, and project documentation through a Model Context Protocol connector deployed on Google Cloud Run.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,32px);border-top:1px solid #dceceb;padding-top:30px;max-width:960px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Role</div>
+        <div style="font-size:15px;color:#1c4a4d">Connector development and deployment</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Users</div>
+        <div style="font-size:15px;color:#1c4a4d">Delivery leads and project managers</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Pattern</div>
+        <div style="font-size:15px;color:#1c4a4d">Retrieval over live systems, not a copy</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Runs on</div>
+        <div style="font-size:15px;color:#1c4a4d">Google Cloud Run</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#e8f7f6;border-top:1px solid #dceceb;border-bottom:1px solid #dceceb">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,72px)">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The problem</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">The answer existed. Finding it took knowing where to look.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">How a delivery process works, which template is current, what a project agreed last quarter: all of it was written down somewhere. Spread across an internal site, a shared drive, Slack history, and project documentation, with no single index.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">The people who most needed those answers were the newest, which is exactly the group least able to guess which system holds them.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The approach</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">Read the live systems. Do not build another copy.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">A second index of the same knowledge is a second thing to keep current, and it goes stale quietly. So the agent retrieves from the systems of record at query time through connector tools, one per source.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Answers cite where they came from, which means a wrong answer points at the document that needs fixing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="margin-bottom:36px;max-width:60ch">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">Sources</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 16px;text-wrap:pretty">Four systems of record, one question box.</h2>
+      <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">Each source needed its own tool, its own permissions, and its own answer to the question of what happens when the retrieval finds nothing.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px">
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Google Sites</div>
+        <h3 style="font-size:19px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">The internal handbook</h3>
+        <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0">Process pages, delivery standards, and the operating model as published to the organisation.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Google Drive</div>
+        <h3 style="font-size:19px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Templates and artefacts</h3>
+        <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0">Statements of work, plans, and the templates that a delivery lead is expected to start from.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Slack</div>
+        <h3 style="font-size:19px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Decisions in conversation</h3>
+        <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0">The channel history where a decision was actually made, often before anyone wrote it down formally.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Project documentation</div>
+        <h3 style="font-size:19px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">What a given project agreed</h3>
+        <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0">Per-engagement scope, status, and commitments, so an answer can be specific to one client rather than general.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="background:#1c4a4d;color:#e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="max-width:66ch;margin-bottom:40px">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#62d7b8;margin:0 0 18px">How it works</p>
+        <h2 style="font-size:clamp(30px,4.2vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:400;margin:0 0 22px;color:#ffffff;text-wrap:pretty">A connector, not an integration project.</h2>
+        <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.65;color:#b0eed3;margin:0">The Model Context Protocol is the reason this was weeks rather than months. The connector declares what it can read; the agent decides when to read it. Nothing about the agent has to be rebuilt when a source is added.</p>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:2px;border-radius:16px;overflow:hidden">
+        <div style="background:#185f60;padding:28px 24px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Step one</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Ask</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">A question in plain language, from someone who does not know which system holds the answer.</div>
+        </div>
+        <div style="background:#1f6a6a;padding:28px 24px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Step two</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Retrieve</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">The agent selects the connector tools that could hold it and reads the live source, scoped by the caller's permissions.</div>
+        </div>
+        <div style="background:#1f6a6a;padding:28px 24px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Step three</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Answer with a citation</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">The answer names the document or channel it came from, so it can be checked rather than trusted.</div>
+        </div>
+        <div style="background:#237070;padding:28px 24px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Step four</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Say when it does not know</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">A retrieval that finds nothing returns nothing. An agent guessing about a client commitment is worse than no agent.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="max-width:60ch;margin-bottom:32px">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">What it taught me</p>
+      <h2 style="font-size:clamp(28px,3.6vw,38px);line-height:1.12;letter-spacing:-.03em;font-weight:400;margin:0;text-wrap:pretty">Most of the work was not the protocol.</h2>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px">
+      <div style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,32px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Deployment</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Containers that would not start</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">I resolved the Google Cloud Run container deployment failures and finalised the configuration. A connector that fails to start presents identically to one that has no tools at all, which is the least helpful failure mode there is.</p>
+      </div>
+      <div style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,32px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Permissions</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">The agent should not see more than the asker</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Retrieval across a shared drive and a Slack history is a permissions problem before it is a retrieval problem. The connector reads within the caller's access, not above it.</p>
+      </div>
+      <div style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,32px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Carried forward</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Absence carries no reason</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Debugging this connector is where I learned that an empty tool list tells you nothing about why. That lesson became a diagnostic command in the assessment plugin, which names the missing credential instead of leaving an engineer to guess.</p>
+      </div>
+    </div>
+    <div class="rv" style="margin-top:32px">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 16px">Tech stack</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;max-width:70ch">
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Model Context Protocol</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Python</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Cloud Run</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Docker</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Workspace interfaces</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Slack</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Identity and access management</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:36px clamp(20px,4vw,40px) 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="capability-intelligence.html" style="font-size:15px;color:#185f60">← Project 03: Capability Intelligence Agent</a>
+      <a href="automation-fabric.html" style="font-size:15px;color:#185f60">Project 05: Scheduling bot and automation fabric →</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

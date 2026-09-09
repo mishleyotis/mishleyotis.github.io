@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 47-agent assessment plugin - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {}
+  @media print {}
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap;position:relative">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <div class="navdrop" style="position:relative;display:inline-block">
+          <a href="projects.html" style="color:#48706f">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:12px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#12595a;font-weight:500;background:#e8f7f6">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">The 47-agent assessment plugin</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-size:14px;flex-wrap:wrap">
+        <a href="#problem" style="color:#185f60">The problem</a>
+        <a href="#families" style="color:#185f60">Agent families</a>
+        <a href="#pipeline" style="color:#185f60">Pipeline</a>
+        <a href="#lessons" style="color:#185f60">Lessons</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(36px,5vw,56px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 24px">Project 02 &nbsp;·&nbsp; Zennify &nbsp;·&nbsp; version 0.9.7</p>
+    <h1 style="font-size:clamp(36px,5.6vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:400;margin:0 0 24px;max-width:24ch;text-wrap:pretty">The 47-agent assessment plugin</h1>
+    <p style="font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:#2c5f61;max-width:62ch;margin:0 0 40px;text-wrap:pretty">The multi-agent system that produces the assessments DMA Insights publishes. Forty-seven agents in eleven families, six skills, and sixty-five gates that decide whether a page is allowed to reach a client, all packaged as one installable Claude plugin.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,32px);border-top:1px solid #dceceb;padding-top:30px;max-width:960px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Role</div>
+        <div style="font-size:15px;color:#1c4a4d">Architect and sole maintainer</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Serves</div>
+        <div style="font-size:15px;color:#1c4a4d">DMA Insights, in production</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Contains</div>
+        <div style="font-size:15px;color:#1c4a4d">47 agents, 6 skills, 2 commands, 5 hooks</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Connector</div>
+        <div style="font-size:15px;color:#1c4a4d">33 tools, 65 publish gates</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem" style="background:#e8f7f6;border-top:1px solid #dceceb;border-bottom:1px solid #dceceb">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,72px)">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The problem</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">One monolithic producer re-produced six pages to fix one card.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">The first version generated a whole assessment in one pass. When a reviewer flagged a single card on a single page, the only available response was to run the whole thing again, which changed five other pages nobody had asked about.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Reviews became unrepeatable. That is not a prompt problem, and no amount of instruction fixed it.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The approach</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">Make production cheap. Make checking expensive.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">Producers own specific sections of the payload and run on the fast model tier. Checkers, the consolidator, and the quality assurance overseer run on the strong tier and are allowed to refuse, because checking is where depth pays.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Every agent carries an explicit tool allow-list. Capability is declared, not inherited.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="families" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="max-width:66ch;margin-bottom:40px">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">Agent families</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 16px;text-wrap:pretty">Forty-seven agents, eleven families, one org chart.</h2>
+      <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">Choose a family to see who is in it, and the invariant that keeps it honest.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Orchestration</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">The conductor and its gatekeepers</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">3 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">Routing decides who does the work. Only one agent in the whole system may submit or promote.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">surface producer</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">package vetter</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">page consolidator</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">Submission and promotion never leave the surface producer. Content enters through the connector in exactly one place.</p>
+        </div>
+      </div>
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Production</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">Six client pages, four routers</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">24 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">Each client-facing page has a router and its section producers. Four routers cover all six pages, and all of them run on the fast model tier.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">overview router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">hero</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">narrative</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">opportunity</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">people</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">why now</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">market</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">findings</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">governance</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">heatmap router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">grid</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">focus</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">evidence</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">value chain</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">signals</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">freshness</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">platform router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">fit</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">conversation</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">roadmap</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">context router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">insights router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">technology router</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">register</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">A producer writes only the payload sections it owns. Fixing one card does not re-produce a page.</p>
+        </div>
+      </div>
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Enrichment</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">Firmographics and leadership</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">4 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">External research is planned before it is fetched, and recorded after. The record has its own auditor.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">enrichment planner</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">web specialist</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">connector specialist</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">ledger auditor</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">Every enrichment call is written to a ledger, and no claim may cite a source the ledger does not contain.</p>
+        </div>
+      </div>
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Checkers</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">Adversarial by design</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">4 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">These agents exist to make a finding fail before a client reads it. They are the reason the fast tier is safe to use.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">finding challenger</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">evidence integrity checker</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">numeric reconciliation checker</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">exclusion boundary auditor</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">The consolidator refuses unchallenged input. A finding nobody attacked is not a finding.</p>
+        </div>
+      </div>
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Quality assurance</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">Verify the deployed thing</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">3 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">Verification of what is actually running, not what was intended, plus the overseer that records what was learned.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">adversarial verifier</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">deployed application auditor</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">quality assurance overseer</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">The auditor checks the application as deployed. A credential that exists is not a credential that is enforced.</p>
+        </div>
+      </div>
+      <div class="rv" style="border:1px solid #2f6f70;border-radius:18px;padding:clamp(24px,3vw,32px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div style="font-size:19px;color:#ffffff">Learning</div>
+            <div style="font-size:13px;color:#8fd9c4;margin-top:4px">Feedback becomes a change</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:12px;color:#62d7b8">3 agents</div>
+        </div>
+        <p style="font-size:16px;line-height:1.6;color:#b0eed3;margin:0 0 18px;max-width:62ch;text-wrap:pretty">The loop that turns a repeated refusal into a permanent fix: cluster the feedback, climb the ladder, close it out.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">rectifier</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">learning grader</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;padding:7px 12px;border-radius:6px;border:1px solid #2f6f70;color:#b0eed3">learning test generator</span>
+        </div>
+        <div style="border-top:1px solid #2f6f70;padding-top:16px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fc4b6;margin-bottom:8px">Invariant</div>
+          <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0;max-width:64ch">A gate that refuses twice writes to the findings memory, and the next run reads it before starting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline" style="background:#1c4a4d;color:#e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="max-width:66ch;margin-bottom:44px">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#62d7b8;margin:0 0 18px">The pipeline</p>
+        <h2 style="font-size:clamp(30px,4.2vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:400;margin:0 0 22px;color:#ffffff;text-wrap:pretty">Six stages, and none of them optional.</h2>
+        <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.65;color:#b0eed3;margin:0">Each stage can stop the run. The value is not in the sequence, it is in the fact that no stage can be skipped by an agent in a hurry.</p>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:2px;border-radius:16px;overflow:hidden">
+        <div style="background:#185f60;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage one</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Route</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">A routing table decides which agent owns the change. Nothing is re-produced by default.</div>
+        </div>
+        <div style="background:#1f6a6a;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage two</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Produce</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">Producers write only the payload sections they own, on the fast model tier.</div>
+        </div>
+        <div style="background:#237474;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage three</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Challenge</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">A challenger, an evidence integrity checker, and a numeric reconciliation checker attack the output.</div>
+        </div>
+        <div style="background:#277e7e;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage four</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Consolidate</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">The consolidator refuses unchallenged input. Skipping stage three is not an available shortcut.</div>
+        </div>
+        <div style="background:#237474;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage five</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Submit</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">One agent submits and promotes. Content enters through the connector in exactly one place.</div>
+        </div>
+        <div style="background:#277e7e;padding:28px 22px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#62d7b8;margin-bottom:12px">Stage six</div>
+          <div style="font-size:18px;color:#ffffff;margin-bottom:10px">Learn</div>
+          <div style="font-size:13px;line-height:1.5;color:#d9f4ea">The overseer writes the findings memory, so the same refusal is not discovered twice.</div>
+        </div>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px;margin-top:36px">
+        <div style="border:1px solid #2f6f70;border-radius:16px;padding:28px">
+          <div style="font-size:16px;color:#ffffff;margin-bottom:10px;font-weight:500">Hooks refuse doomed work early</div>
+          <p style="font-size:14px;line-height:1.6;color:#d9f4ea;margin:0">A submit precheck stops a payload before the network call is made. A verdict watcher writes to the memory when a gate refuses the same thing twice.</p>
+        </div>
+        <div style="border:1px solid #2f6f70;border-radius:16px;padding:28px">
+          <div style="font-size:16px;color:#ffffff;margin-bottom:10px;font-weight:500">Gates that explain themselves</div>
+          <p style="font-size:14px;line-height:1.6;color:#d9f4ea;margin:0">All sixty-five gates carry producer guidance, so a refusal says what to do differently. A test refuses to let a new gate ship without it.</p>
+        </div>
+        <div style="border:1px solid #2f6f70;border-radius:16px;padding:28px">
+          <div style="font-size:16px;color:#ffffff;margin-bottom:10px;font-weight:500">Golden cases, replayed</div>
+          <p style="font-size:14px;line-height:1.6;color:#d9f4ea;margin:0">Sparse evidence, contradictory evidence, dependency caps, staleness, and critic passes are held as fixed cases and replayed before a change ships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="max-width:60ch;margin-bottom:36px">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">What it taught me</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;text-wrap:pretty">Two findings worth more than the feature work.</h2>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px">
+      <div style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Finding one</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">Two credentials that fail identically</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0 0 12px">Most install failures were one of two missing credentials, and both presented the same way: the connector's tools were simply absent, and absent carries no reason. A path token proves which connector you meant. An identity token proves who you are.</p>
+        <p style="font-size:15px;line-height:1.65;color:#48706f;margin:0">A doctor command now names the missing one instead of leaving an engineer to infer it from an empty tool list.</p>
+      </div>
+      <div style="border:1px solid #fe9732;border-radius:18px;padding:clamp(26px,3vw,34px);background:#fff8f1">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c26a13;margin-bottom:14px">Finding two</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">A token that is sent is not a token that is checked</h3>
+        <p style="font-size:15px;line-height:1.65;color:#6b4a24;margin:0 0 12px">The connector granted invoker access to all users with open ingress. The plugin minted an identity token on every connection, sent it, and nothing on the other side ever read it. Authentication rested entirely on a thirty-two character token in a web address, on the one component permitted to write serving content.</p>
+        <p style="font-size:15px;line-height:1.65;color:#8a6134;margin:0">Every check passed throughout, because each measured that a credential existed and none measured that anything enforced it. The doctor now probes enforcement directly with an unauthenticated call to a deliberately wrong token.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fcfdfd;border-top:1px solid #e8f7f6;border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,60px)">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">Outcome</p>
+        <h2 style="font-size:clamp(24px,3vw,30px);line-height:1.18;letter-spacing:-.025em;font-weight:400;margin:0 0 18px;text-wrap:pretty">Fixing one card no longer re-produces six pages.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">The plugin now backs 100+ digital maturity assessments delivered across the nine financial services subverticals, under approval-gated, standards-aligned review.</p>
+        <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">Consolidating the knowledge graph from 326 files into 25 bundled ones is what made it installable in the first place.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">Tech stack</p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px">
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Claude plugins and skills</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Model Context Protocol</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Python</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Google Cloud Run</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Identity and access management</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Secret management</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Automated testing</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Knowledge graph design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:36px clamp(20px,4vw,40px) 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <a href="dma-insights.html" style="font-size:15px;color:#185f60">← Project 01: DMA Insights</a>
+    <a href="capability-intelligence.html" style="font-size:15px;color:#185f60">Project 03: Capability Intelligence Agent →</a>
+  </section>
+
+</div>
+</body>
+</html>

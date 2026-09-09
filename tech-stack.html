@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tech stack - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1160px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">Tech stack</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,26px);font-size:14px;flex-wrap:wrap">
+        <a href="my-story.html" style="color:#185f60">My story</a>
+        <div class="navdrop" style="position:relative;padding:8px 0">
+          <a href="projects.html" style="color:#185f60">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:10px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <a href="volunteer-work.html" style="color:#185f60">Volunteer work</a>
+        <a href="index.html#contact" style="padding:9px 18px;border-radius:999px;background:#1c4a4d;color:#ffffff;font-weight:500">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(44px,7vw,84px) clamp(20px,4vw,40px) clamp(32px,4vw,48px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 22px">Tech stack</p>
+    <h1 style="font-size:clamp(34px,5.2vw,54px);line-height:1.04;letter-spacing:-.035em;font-weight:400;margin:0 0 22px;max-width:24ch;text-wrap:pretty">The stack, by the layer it lives in.</h1>
+    <p style="font-size:clamp(17px,1.9vw,20px);line-height:1.6;color:#2c5f61;max-width:56ch;margin:0">Each layer, what I use there, and what I have shipped with it.</p>
+  </section>
+
+  <section style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px) clamp(52px,8vw,88px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(22px,3vw,44px);border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:3px;height:34px;border-radius:2px;background:#27bbaf;flex:none"></span>
+            <span>
+              <span style="display:block;font-size:17px;color:#1c4a4d;font-weight:500">Artificial intelligence and agents</span>
+              <span style="display:block;font-size:13px;color:#48706f;margin-top:3px">Skills, agents, connectors</span>
+            </span>
+          </div>
+        </div>
+        <div style="grid-column:span 2">
+          <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.55;color:#1c4a4d;margin:0 0 20px;max-width:52ch;text-wrap:pretty">Where most of my work sits: designing the agents, the retrieval, and the rules that decide when an agent is allowed to be believed.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Claude skill architecture</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Multi-agent orchestration</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Claude plugins</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Model Context Protocol connectors</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Retrieval-augmented generation</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Knowledge graph design</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Prompt engineering</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Red teaming</span>
+          </div>
+          <div style="border-top:1px solid #edf5f4;padding-top:18px">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped with it</div>
+            <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0;max-width:60ch">A 47-agent, six-skill plugin with a remote connector of thirty-three tools and sixty-five publish gates, and a knowledge graph consolidated from 326 files into 25 bundled ones.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(22px,3vw,44px);border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:3px;height:34px;border-radius:2px;background:#27bbaf;flex:none"></span>
+            <span>
+              <span style="display:block;font-size:17px;color:#1c4a4d;font-weight:500">Application and interface</span>
+              <span style="display:block;font-size:13px;color:#48706f;margin-top:3px">React, TypeScript</span>
+            </span>
+          </div>
+        </div>
+        <div style="grid-column:span 2">
+          <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.55;color:#1c4a4d;margin:0 0 20px;max-width:52ch;text-wrap:pretty">Client-facing surfaces for artificial intelligence systems: six-page assessment reports, a conversational catalogue interface, and the interactive prototypes that preceded both.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">React</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">TypeScript</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Interface prototyping</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Figma</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Adobe XD</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Web interfaces</span>
+          </div>
+          <div style="border-top:1px solid #edf5f4;padding-top:18px">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped with it</div>
+            <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0;max-width:60ch">Two production language-model applications built end to end, each preceded by a requirements document, technical design, and interface brief.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(22px,3vw,44px);border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:3px;height:34px;border-radius:2px;background:#27bbaf;flex:none"></span>
+            <span>
+              <span style="display:block;font-size:17px;color:#1c4a4d;font-weight:500">Backend and data</span>
+              <span style="display:block;font-size:13px;color:#48706f;margin-top:3px">Python, PostgreSQL</span>
+            </span>
+          </div>
+        </div>
+        <div style="grid-column:span 2">
+          <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.55;color:#1c4a4d;margin:0 0 20px;max-width:52ch;text-wrap:pretty">The part that has to be right. Schema design, enrichment pipelines, and the test suites that catch a bad payload before a client sees it.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Python</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">PostgreSQL</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Structured query language</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Alteryx pipelines</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Enrichment pipelines</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Automated testing</span>
+          </div>
+          <div style="border-top:1px solid #edf5f4;padding-top:18px">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped with it</div>
+            <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0;max-width:60ch">3,500+ pre-deployment pipeline tests plus end-to-end suites, and extract-transform-load pipelines reused across six industries at EY.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(22px,3vw,44px);border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:3px;height:34px;border-radius:2px;background:#27bbaf;flex:none"></span>
+            <span>
+              <span style="display:block;font-size:17px;color:#1c4a4d;font-weight:500">Cloud and infrastructure</span>
+              <span style="display:block;font-size:13px;color:#48706f;margin-top:3px">Google Cloud, Terraform</span>
+            </span>
+          </div>
+        </div>
+        <div style="grid-column:span 2">
+          <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.55;color:#1c4a4d;margin:0 0 20px;max-width:52ch;text-wrap:pretty">Deployment, identity, and the difference between a credential that exists and a credential that is actually checked.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Google Cloud Run</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Google Cloud Platform</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Terraform</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Docker</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Continuous integration and delivery</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Identity and access management</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Secret management</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Google Apps Script</span>
+          </div>
+          <div style="border-top:1px solid #edf5f4;padding-top:18px">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped with it</div>
+            <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0;max-width:60ch">Both applications deployed to production on Google Cloud Run with Terraform, and a connector found to be granting open access while every credential check passed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(22px,3vw,44px);border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:3px;height:34px;border-radius:2px;background:#27bbaf;flex:none"></span>
+            <span>
+              <span style="display:block;font-size:17px;color:#1c4a4d;font-weight:500">Automation and governance</span>
+              <span style="display:block;font-size:13px;color:#48706f;margin-top:3px">n8n, Zapier, Slack, ISO</span>
+            </span>
+          </div>
+        </div>
+        <div style="grid-column:span 2">
+          <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.55;color:#1c4a4d;margin:0 0 20px;max-width:52ch;text-wrap:pretty">Removing manual steps, then writing down the standard that keeps the automated version trustworthy.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px">
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">n8n</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Zapier</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Slack integrations</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Workflow design</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">ISO/IEC 42001</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">ISO/IEC 27001 audits</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Power BI</span>
+            <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60;background:#ffffff">Tableau</span>
+          </div>
+          <div style="border-top:1px solid #edf5f4;padding-top:18px">
+            <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped with it</div>
+            <p style="font-size:15px;line-height:1.6;color:#2c5f61;margin:0;max-width:60ch">A Slack scheduling bot and five production workflows that cut turnaround from days to hours, and a governance playbook adopted as the team standard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #e8f7f6">
+    <div style="max-width:1160px;margin:0 auto;padding:32px clamp(20px,4vw,40px) 52px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="index.html" style="font-size:15px;color:#185f60">← Portfolio</a>
+      <a href="projects.html" style="font-size:15px;color:#185f60">See it applied in the projects →</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

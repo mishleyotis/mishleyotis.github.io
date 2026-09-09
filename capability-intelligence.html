@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capability Intelligence Agent - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {}
+  @media print {}
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap;position:relative">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <div class="navdrop" style="position:relative;display:inline-block">
+          <a href="projects.html" style="color:#48706f">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:12px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#12595a;font-weight:500;background:#e8f7f6">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">Capability Intelligence Agent</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-size:14px;flex-wrap:wrap">
+        <a href="#build" style="color:#185f60">The build</a>
+        <a href="#catalogue" style="color:#185f60">Catalogue</a>
+        <a href="#prototype" style="color:#185f60">Prototype</a>
+        <a href="#docs" style="color:#185f60">Documents</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(36px,5vw,56px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 24px">Project 03 &nbsp;·&nbsp; Zennify &nbsp;·&nbsp; deployed</p>
+    <h1 style="font-size:clamp(36px,5.4vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:400;margin:0 0 24px;max-width:22ch;text-wrap:pretty">Capability Intelligence Agent</h1>
+    <p style="font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:#2c5f61;max-width:62ch;margin:0 0 40px;text-wrap:pretty">A conversational surface over the firm's capability catalogue, four levels deep across four pillars. Ask it a question in plain language and it answers from a curated taxonomy, with the catalogue entry that justifies the answer attached.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,32px);border-top:1px solid #dceceb;padding-top:30px;max-width:960px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Role</div>
+        <div style="font-size:15px;color:#1c4a4d">Sole engineer, end to end</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Users</div>
+        <div style="font-size:15px;color:#1c4a4d">Solution architects and delivery leads</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Depth</div>
+        <div style="font-size:15px;color:#1c4a4d">Four pillars, four levels</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Runs on</div>
+        <div style="font-size:15px;color:#1c4a4d">Google Cloud Run</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#e8f7f6;border-top:1px solid #dceceb;border-bottom:1px solid #dceceb">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,72px)">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The problem</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">A capability catalogue nobody can query is a spreadsheet nobody opens.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">The catalogue holds the firm's view of what it can do, broken down four levels deep across four pillars. It is the reference for scoping, for assessment, and for answering a client asking whether a capability is covered.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">In spreadsheet form, finding the right entry took knowing the taxonomy first. The people who most needed it were the least likely to have that in their head.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The approach</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">Retrieval over a curated graph, not a similarity guess.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">Queries resolve against the catalogue's own structure. A question about a capability lands on a specific subcapability, and the answer carries its pillar, category, and level with it.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">That constraint is the feature. An answer that cannot be traced to a catalogue entry is not an answer this system is allowed to give.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="build" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="margin-bottom:36px;max-width:60ch">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">The build</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;text-wrap:pretty">Three layers, one conversation.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px">
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Surface</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">A query interface, not a chatbot</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Built in React and TypeScript. Answers arrive with their taxonomy path visible, so a user learns the structure by using it rather than by reading a legend first.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Retrieval</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">Subcapability matching against the catalogue</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">A query builder narrows to the pillar and category before it looks at entries, so a broad question does not return a long list of near misses.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Data</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">PostgreSQL, with a versioned catalogue</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Version 2.4 is live and version 1.0 is retained and marked inactive. A migration moved subcapabilities to a unified five-facet diagnostic structure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogue" style="background:#1c4a4d;color:#e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="max-width:66ch;margin-bottom:40px">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#62d7b8;margin:0 0 18px">The catalogue</p>
+        <h2 style="font-size:clamp(30px,4.2vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:400;margin:0 0 22px;color:#ffffff;text-wrap:pretty">Four levels, and the discipline to keep them separate.</h2>
+        <p style="font-size:clamp(16px,1.7vw,18px);line-height:1.65;color:#b0eed3;margin:0">Each level answers a different question. Collapsing two of them is how a catalogue starts drifting, and drift is what makes it untrustworthy.</p>
+      </div>
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:2px;border-radius:16px;overflow:hidden">
+        <div style="background:#185f60;padding:30px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:14px">Level one</div>
+          <div style="font-size:19px;color:#ffffff;margin-bottom:12px">Pillar</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">The four broad domains the firm delivers in. Stable, and deliberately few.</div>
+        </div>
+        <div style="background:#1f6a6a;padding:30px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:14px">Level two</div>
+          <div style="font-size:19px;color:#ffffff;margin-bottom:12px">Category</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">How a pillar divides into areas of work a team can actually own.</div>
+        </div>
+        <div style="background:#1f6a6a;padding:30px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:14px">Level three</div>
+          <div style="font-size:19px;color:#ffffff;margin-bottom:12px">Capability</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">The unit a client recognises and a proposal can be scoped against.</div>
+        </div>
+        <div style="background:#237070;padding:30px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:14px">Level four</div>
+          <div style="font-size:19px;color:#ffffff;margin-bottom:12px">Subcapability</div>
+          <div style="font-size:14px;line-height:1.55;color:#d9f4ea">Where evidence attaches, on a unified five-facet diagnostic structure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prototype" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:28px">
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">Prototype</p>
+        <h2 style="font-size:clamp(26px,3.4vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;max-width:26ch;text-wrap:pretty">Try the agent surface.</h2>
+      </div>
+      <a href="work/capability-intelligence-app.html" target="_blank" style="font-size:15px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:3px">Open in a new tab →</a>
+    </div>
+    <div class="rv" style="border:1px solid #dceceb;border-radius:18px;overflow:hidden;background:#fcfdfd">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #dceceb;background:#f2f4f9">
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;color:#8094c0;margin-left:12px">Capability Intelligence Agent</span>
+      </div>
+      <img src="assets/proto-capability-intelligence.png" alt="Capability Intelligence Agent" style="width:100%;height:auto;display:block;border:none">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 20px;border-top:1px solid #dceceb;background:#fcfdfd">
+        <span style="font-size:14px;color:#48706f;max-width:52ch">A question, the answer, and the catalogue path it resolved against, as a static page.</span>
+        <a href="prototype/capability-agent.html" style="font-size:14px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:2px">Walk the screens →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" style="background:#f2f4f9;border-top:1px solid #e2e7f2;border-bottom:1px solid #e2e7f2">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="margin-bottom:36px;max-width:60ch">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#4d5c7d;margin:0 0 14px">Documents</p>
+        <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 16px;text-wrap:pretty">The full document set, from brief to implementation.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#4d5c7d;margin:0">Requirements, technical design, interface brief, database schema, application flow, and plan. Read in that order they are the build, in sequence.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:20px">
+        <a href="docs/ci-prd.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Requirements</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Product requirements document</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">The users, the questions they arrive with, and what a good answer has to include.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/ci-trd.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Technical design</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Technical requirements document</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Retrieval strategy, services, and the deployment shape on Google Cloud Run.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/ci-uiux-brief.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Interface brief</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">User interface and experience brief</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Interaction model, states, and how a taxonomy path is shown without teaching a lesson.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/ci-backend-schema.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Database</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Backend schema</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">The four-level catalogue model, and the five-facet subcapability structure it migrated to.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/ci-app-flow.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Flow</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Application flow</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">A query from keystroke to answer, including what happens when nothing matches.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/ci-implementation.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Plan</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Implementation plan</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Build order, migrations, and the checks that had to pass before each step counted.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,64px)">
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">What changed</p>
+        <h2 style="font-size:clamp(26px,3.2vw,32px);line-height:1.16;letter-spacing:-.025em;font-weight:400;margin:0 0 18px;text-wrap:pretty">Scoping conversations stopped starting with a spreadsheet.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">The runtime module was replaced with a canonical eight-case implementation, and subcapability schemas migrated to a single five-facet diagnostic structure. Two changes that sound like housekeeping and were the difference between a catalogue and a queryable one.</p>
+        <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">The same catalogue now feeds the assessment skills used in DMA Insights.</p>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">Tech stack</p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px">
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">React</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">TypeScript</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Python</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">PostgreSQL</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Cloud Run</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Terraform</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Knowledge graph retrieval</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:36px clamp(20px,4vw,40px) 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="dma-plugin.html" style="font-size:15px;color:#185f60">← Project 02: The 47-agent assessment plugin</a>
+      <a href="pmo-knowledge-agent.html" style="font-size:15px;color:#185f60">Project 04: Project management office knowledge agent →</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

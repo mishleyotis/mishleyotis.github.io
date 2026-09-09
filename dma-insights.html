@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DMA Insights - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {}
+  @media print {}
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap;position:relative">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <div class="navdrop" style="position:relative;display:inline-block">
+          <a href="projects.html" style="color:#48706f">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:12px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#12595a;font-weight:500;background:#e8f7f6">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">DMA Insights</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-size:14px;flex-wrap:wrap">
+        <a href="#build" style="color:#185f60">The build</a>
+        <a href="#prototypes" style="color:#185f60">Prototypes</a>
+        <a href="#docs" style="color:#185f60">Documents</a>
+        <a href="#outcome" style="color:#185f60">Outcome</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(36px,5vw,56px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 24px">Project 01 &nbsp;·&nbsp; Zennify &nbsp;·&nbsp; in production</p>
+    <h1 style="font-size:clamp(38px,5.8vw,60px);line-height:1.05;letter-spacing:-.035em;font-weight:400;margin:0 0 24px;max-width:20ch;text-wrap:pretty">DMA Insights</h1>
+    <p style="font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:#2c5f61;max-width:62ch;margin:0 0 40px;text-wrap:pretty">The digital maturity assessment platform for financial institutions, known internally as the Zennify insights platform. Research, scoring, enrichment, and a six-page client surface, built so that every claim on the page can be traced back to the evidence that justified it.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,32px);border-top:1px solid #dceceb;padding-top:30px;max-width:960px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Role</div>
+        <div style="font-size:15px;color:#1c4a4d">Sole engineer, end to end</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Users</div>
+        <div style="font-size:15px;color:#1c4a4d">Distributed delivery team, four time zones</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Coverage</div>
+        <div style="font-size:15px;color:#1c4a4d">Nine financial services subverticals</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Delivered</div>
+        <div style="font-size:15px;color:#1c4a4d">100+ digital maturity assessments</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#e8f7f6;border-top:1px solid #dceceb;border-bottom:1px solid #dceceb">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,72px)">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The problem</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">An assessment is only worth what its weakest claim is worth.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">Maturity assessments for banks, credit unions, insurers, lenders, and wealth managers are sold on judgement. One unsupported score, one number that does not reconcile with the page before it, or one claim about a client's core system that nobody can source, and the whole document loses its authority.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Producing them by hand did not scale. Producing them in one large model pass scaled, and produced exactly those failures.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The approach</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">Build the platform, then build a system that can refuse to publish to it.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">The application is the surface clients read. Behind it sits a separate multi-agent system that produces the content and a connector that is the only path by which content becomes serving content.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Those are deliberately separate projects. The platform can be improved without touching the production system, and vice versa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="build" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="margin-bottom:40px;max-width:60ch">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">The build</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;text-wrap:pretty">Four pieces of the platform.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px">
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Application</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">A machine-learning application on Google Cloud</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">React and TypeScript on the front, Python and PostgreSQL behind it, deployed to Google Cloud Run with Terraform. Validated with end-to-end suites and more than three thousand five hundred pre-deployment pipeline tests.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Enrichment</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">Firmographics and leadership intelligence</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">A Gemini enrichment pipeline resolves company facts and leadership signals, with Clay filling the gaps the pipeline cannot. Every call is recorded, so a claim can only cite a source the record contains.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Surface</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">Six client pages, each independently owned</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Overview, heatmap, platform fit, context, insights, and technology stack. Section ownership is explicit, which is what makes a targeted correction possible.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:clamp(26px,3vw,34px)">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:16px">Governance</div>
+        <h3 style="font-size:21px;font-weight:400;letter-spacing:-.02em;margin:0 0 14px">A playbook, and the gates that enforce it</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">A governance playbook setting quality, evidence-rigour, and audit-traceability standards, with fixed cases replayed before any change ships.</p>
+      </div>
+    </div>
+
+    <a href="dma-plugin.html" class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,3vw,44px);align-items:center;margin-top:22px;border:1px solid #1c4a4d;border-radius:18px;padding:clamp(26px,3vw,36px);background:#1c4a4d">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:14px">Related project</div>
+        <h3 style="font-size:clamp(22px,2.6vw,26px);font-weight:400;letter-spacing:-.02em;margin:0 0 12px;color:#ffffff">The 47-agent assessment plugin</h3>
+        <p style="font-size:15px;line-height:1.65;color:#b0eed3;margin:0">The multi-agent production system that writes what this platform publishes. Forty-seven agents, eleven families, and sixty-five gates that can refuse. It is documented as its own project.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:flex-end">
+        <span style="font-size:15px;font-weight:500;color:#ffffff;border-bottom:1px solid #27bbaf;padding-bottom:3px">Open project 02 →</span>
+      </div>
+    </a>
+  </section>
+
+  <section id="prototypes" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) clamp(48px,7vw,80px)">
+    <div class="rv" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:28px">
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">Prototype one</p>
+        <h2 style="font-size:clamp(26px,3.4vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;max-width:26ch;text-wrap:pretty">The client surface, running.</h2>
+      </div>
+      <a href="work/dma-insights-app.html" target="_blank" style="font-size:15px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:3px">Open in a new tab →</a>
+    </div>
+    <div class="rv" style="border:1px solid #dceceb;border-radius:18px;overflow:hidden;background:#fcfdfd">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #dceceb;background:#f2f4f9">
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;color:#8094c0;margin-left:12px">DMA Insights client surface</span>
+      </div>
+      <img src="assets/proto-dma-insights.png" alt="DMA Insights command centre" style="width:100%;height:auto;display:block;border:none">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 20px;border-top:1px solid #dceceb;background:#fcfdfd">
+        <span style="font-size:14px;color:#48706f;max-width:52ch">Every screen rebuilt as a static page: the command centre and all seven client surfaces.</span>
+        <a href="prototype/index.html" style="font-size:14px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:2px">Walk the screens →</a>
+      </div>
+    </div>
+
+    <div class="rv" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin:clamp(40px,5vw,60px) 0 28px">
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">Prototype two, same platform</p>
+        <h2 style="font-size:clamp(26px,3.4vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0;max-width:30ch;text-wrap:pretty">The same platform, framed for a financial services audience.</h2>
+      </div>
+      <a href="work/zennify-insights-platform.html" target="_blank" style="font-size:15px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:3px">Open in a new tab →</a>
+    </div>
+    <div class="rv" style="border:1px solid #dceceb;border-radius:18px;overflow:hidden;background:#fcfdfd">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #dceceb;background:#f2f4f9">
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="width:10px;height:10px;border-radius:999px;background:#dfe5f0"></span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;color:#8094c0;margin-left:12px">Zennify insights platform</span>
+      </div>
+      <img src="assets/proto-zennify-insights.png" alt="Zennify insights platform" style="width:100%;height:auto;display:block;border:none">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 20px;border-top:1px solid #dceceb;background:#fcfdfd">
+        <span style="font-size:14px;color:#48706f;max-width:52ch">The same platform framed for a financial services audience. Static walkthrough of the overview surface.</span>
+        <a href="prototype/overview.html" style="font-size:14px;font-weight:500;color:#185f60;border-bottom:1px solid #27bbaf;padding-bottom:2px">Walk the screens →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" style="background:#f2f4f9;border-top:1px solid #e2e7f2;border-bottom:1px solid #e2e7f2">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="margin-bottom:36px;max-width:60ch">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#4d5c7d;margin:0 0 14px">Documents</p>
+        <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 16px;text-wrap:pretty">Six documents, written before the code.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#4d5c7d;margin:0">All six open in full. They are the working documents, not a version tidied up for a portfolio.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:20px">
+        <a href="docs/dma-prd.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Requirements</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Product requirements document</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Who the platform serves, what an assessment must contain, and what counts as done.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/dma-trd.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Technical design</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Technical requirements document</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Services, model tiers, the connector contract, and the deployment topology on Google Cloud Run.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/dma-surface-spec.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Interface brief</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Surface specification</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">The six client-facing pages, section by section, and which agent owns each one.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/dma-backend-schema.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Database</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Backend schema</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">The PostgreSQL model behind runs, evidence, scores, and payload versions.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/dma-implementation-plan.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Plan</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Implementation plan</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">Sequencing, dependencies, and the order in which each piece became real.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+        <a href="docs/dma-qa-report.html" target="_blank" class="rv" style="background:#ffffff;border:1px solid #e2e7f2;border-radius:16px;padding:30px;display:flex;flex-direction:column">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d5c7d;margin-bottom:16px">Quality assurance</div>
+          <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 10px">Quality assurance report</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4d5c7d;margin:0 0 16px;flex:1">What the test suites cover, what they caught, and what was left open on purpose.</p>
+          <span style="font-size:14px;color:#3d81f6">Read the document →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcome" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,64px)">
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">Outcome</p>
+        <h2 style="font-size:clamp(26px,3.2vw,32px);line-height:1.16;letter-spacing:-.025em;font-weight:400;margin:0 0 18px;text-wrap:pretty">100+ digital maturity assessments, under a client-facing quality bar.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">Delivered across banks, credit unions, insurance carriers and brokerages, lenders, and wealth and asset managers, under approval-gated, standards-aligned review.</p>
+        <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">The platform is the visible half. The production system that fills it is documented separately, as project 02.</p>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 18px">Tech stack</p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px">
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">React</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">TypeScript</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Python</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">PostgreSQL</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Cloud Run</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Terraform</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Docker</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Gemini</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Clay</span>
+          <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Automated testing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:36px clamp(20px,4vw,40px) 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="projects.html" style="font-size:15px;color:#185f60">← All projects</a>
+      <a href="dma-plugin.html" style="font-size:15px;color:#185f60">Project 02: The 47-agent assessment plugin →</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* Self-hosted DM Sans + DM Mono. Replaces the Google Fonts stylesheet the
+   export linked, so the site has no third-party dependency at runtime.
+   DM Sans ships as one variable font (wght 100-1000, opsz 9-40), so a single
+   pair of files covers every weight the pages and documents ask for. */
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;
+  src:url(DMSans-var-latinext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;
+  src:url(DMSans-var-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(DMMono-400-latinext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(DMMono-400-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(DMMono-500-latinext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(DMMono-500-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* Scroll reveal. The export shipped the .rv base rule plus three progressively
+   stronger overrides that pinned everything visible, because the static build
+   dropped the script that adds .in. site.js restores it, so the reveal lives
+   here instead - but opt-in: the hidden state applies only once site.js has
+   stamped .reveal-armed on <html>, and site.js releases everything already on
+   screen before it stamps. So the first painted frame is always complete, and
+   a page with no JS (or a thumbnail captured before JS runs) shows everything
+   rather than a screen of invisible sections. */
+html.reveal-armed .rv:not(.in){opacity:0;transform:translateY(16px);}
+/* Transitions arrive a frame after .reveal-armed, so hiding the below-fold
+   sections is instant rather than a 0.7s fade-out a fast scroller would see;
+   only the reveal itself animates. */
+html.reveal-ready .rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+@media (prefers-reduced-motion:reduce){
+  html.reveal-ready .rv{transition:none;}
+  html.reveal-armed .rv:not(.in){opacity:1;transform:none;}
+}
+@media print{html.reveal-armed .rv:not(.in){opacity:1;transform:none;}}
+
+/* The specification documents lay their tables out for desktop widths, which
+   pushed the whole page sideways on a phone (8 of the 12 documents, up to
+   707px wide against a 390px viewport). Give each table its own horizontal
+   scroll box so the table scrolls and the page never does. */
+@media (max-width:860px){
+  table.tbl,table.ptable,table.ft,table.sm{
+    display:block;overflow-x:auto;max-width:100%;
+    -webkit-overflow-scrolling:touch;
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scheduling bot and automation - Mishley Otiende</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>html.reveal-armed .rv:not(.in){opacity:1!important;transform:none!important}</style></noscript>
+<script src="assets/site.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; background: #ffffff; color: #1c4a4d; -webkit-font-smoothing: antialiased; }
+  a { color: #185f60; text-decoration: none; }
+  a:hover { color: #27bbaf; }
+  * { box-sizing: border-box; }
+  ::selection { background: #b0eed3; color: #1c4a4d; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {}
+  @media print {}
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  /* static build: no scripts, so reveal animations are pre-applied */
+  .navdrop .navmenu { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, transform .18s ease; transform: translateY(6px); }
+  .navdrop:hover .navmenu, .navdrop:focus-within .navmenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .protonote { display: block; border: 1px solid #dceceb; border-radius: 14px; padding: 22px 24px; background: #fcfdfd; font-size: 15px; line-height: 1.6; color: #2c5f61; }
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',sans-serif;line-height:1.5;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;flex-wrap:wrap;position:relative">
+        <a href="index.html" style="color:#48706f">Portfolio</a>
+        <span style="color:#b8dedb">/</span>
+        <div class="navdrop" style="position:relative;display:inline-block">
+          <a href="projects.html" style="color:#48706f">Projects</a>
+          <div class="navmenu" style="position:absolute;top:100%;left:0;padding-top:12px;z-index:70">
+            <div style="min-width:300px;background:#ffffff;border:1px solid #dceceb;border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(28,74,77,.14)">
+              <a href="dma-insights.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">01 · DMA Insights</a>
+              <a href="dma-plugin.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">02 · The 47-agent assessment plugin</a>
+              <a href="capability-intelligence.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">03 · Capability Intelligence Agent</a>
+              <a href="pmo-knowledge-agent.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">04 · Knowledge agent connectors</a>
+              <a href="automation-fabric.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#12595a;font-weight:500;background:#e8f7f6">05 · Scheduling bot and automation</a>
+              <a href="float-desserts.html" style="display:block;padding:10px 12px;border-radius:9px;font-size:14px;color:#1c4a4d;font-weight:400;background:transparent">06 · Brand launch strategy</a>
+              <a href="projects.html" style="display:block;padding:11px 12px;margin-top:4px;border-top:1px solid #edf5f4;font-size:13px;color:#185f60">All six projects →</a>
+            </div>
+          </div>
+        </div>
+        <span style="color:#b8dedb">/</span>
+        <span style="color:#1c4a4d;font-weight:500">Scheduling bot and automation fabric</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-size:14px;flex-wrap:wrap">
+        <a href="#bot" style="color:#185f60">The bot</a>
+        <a href="#flows" style="color:#185f60">The workflows</a>
+        <a href="#adoption" style="color:#185f60">Adoption</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(36px,5vw,56px)">
+    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 24px">Project 05 &nbsp;·&nbsp; Zennify &nbsp;·&nbsp; internal</p>
+    <h1 style="font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.035em;font-weight:400;margin:0 0 24px;max-width:24ch;text-wrap:pretty">Scheduling bot and automation fabric</h1>
+    <p style="font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:#2c5f61;max-width:62ch;margin:0 0 40px;text-wrap:pretty">A Slack-integrated scheduling bot allocating workload across a team spread over four time zones, and five production workflows that replaced manual data collection. Combined turnaround dropped from days to hours.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,32px);border-top:1px solid #dceceb;padding-top:30px;max-width:960px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Role</div>
+        <div style="font-size:15px;color:#1c4a4d">Builder and operator</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Team</div>
+        <div style="font-size:15px;color:#1c4a4d">Distributed, four time zones</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Shipped</div>
+        <div style="font-size:15px;color:#1c4a4d">One bot, five production workflows</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Effect</div>
+        <div style="font-size:15px;color:#1c4a4d">Days to hours</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bot" style="background:#e8f7f6;border-top:1px solid #dceceb;border-bottom:1px solid #dceceb">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,64px);align-items:center">
+      <div class="rv">
+        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#185f60;margin:0 0 18px">The scheduling bot</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.025em;font-weight:400;margin:0 0 20px;text-wrap:pretty">Workload allocation, in the place the team already is.</h2>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0 0 14px">Allocating analyst workload across four time zones meant reconciling availability by hand, in threads, before anything could start. The bot moved that into Slack: request, allocate, confirm, without leaving the channel.</p>
+        <p style="font-size:16px;line-height:1.65;color:#2c5f61;margin:0">Deployed on Google Cloud Platform. The interface is a Slack conversation because that is where the decision was already being made. A dashboard would only have added a place to forget to look.</p>
+      </div>
+      <div class="rv" style="display:flex;flex-direction:column;gap:2px">
+        <div style="background:#ffffff;border-radius:16px 16px 4px 4px;padding:24px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">Before</div>
+          <div style="font-size:16px;color:#1c4a4d;line-height:1.5">Availability reconciled by hand, across threads, before work could be assigned</div>
+        </div>
+        <div style="background:#ffffff;border-radius:4px;padding:24px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin-bottom:8px">After</div>
+          <div style="font-size:16px;color:#1c4a4d;line-height:1.5">Allocated in the channel, with the record kept where the request was made</div>
+        </div>
+        <div style="background:#1c4a4d;border-radius:4px 4px 16px 16px;padding:24px 26px">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#62d7b8;margin-bottom:8px">Built with</div>
+          <div style="font-size:16px;color:#ffffff;line-height:1.5">Slack · Python · Google Cloud Platform</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flows" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+    <div class="rv" style="margin-bottom:36px;max-width:60ch">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 14px">The workflows</p>
+      <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 16px;text-wrap:pretty">Five workflows that removed manual data collection.</h2>
+      <p style="font-size:16px;line-height:1.65;color:#48706f;margin:0">Built in n8n and Zapier. Each one replaced a recurring task somebody was doing by hand, which is the only reason any of them exist.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px">
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Intake</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Collection without a chaser</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Inputs arrive, get validated, and land in the right place. Nobody has to ask twice for the same file.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Routing</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">The right person, automatically</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Work routes on its own attributes instead of on whoever happened to notice it first.</p>
+      </div>
+      <div class="rv" style="border:1px solid #dceceb;border-radius:18px;padding:30px">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12595a;margin-bottom:14px">Reporting</div>
+        <h3 style="font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 12px">Status without a status meeting</h3>
+        <p style="font-size:15px;line-height:1.65;color:#2c5f61;margin:0">Scheduled digests replace the weekly reconstruction of what actually happened.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="adoption" style="background:#1c4a4d;color:#e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,40px)">
+      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,5vw,64px)">
+        <div>
+          <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#62d7b8;margin:0 0 18px">Adoption</p>
+          <h2 style="font-size:clamp(28px,3.8vw,40px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0 0 22px;color:#ffffff;text-wrap:pretty">A workflow nobody trusts gets worked around.</h2>
+          <p style="font-size:17px;line-height:1.65;color:#b0eed3;margin:0 0 16px">And a worked-around workflow is worse than no workflow, because now there are two processes and only one of them is visible. So the build is only half of this project.</p>
+          <p style="font-size:16px;line-height:1.65;color:#d9f4ea;margin:0">I am the team's single point of contact for artificial intelligence tooling over Slack: access requests, platform troubleshooting, and prompt-engineering and skill-usage support for distributed analysts. That is how I find out which parts of what I built people are quietly avoiding.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="border:1px solid #2f6f70;border-radius:16px;padding:26px">
+            <div style="font-size:16px;color:#ffffff;margin-bottom:10px;font-weight:500">Support is a feedback channel</div>
+            <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0">Every access request and troubleshooting thread is a signal about where the tooling is unclear. Answering them myself keeps that signal from getting summarised away.</p>
+          </div>
+          <div style="border:1px solid #2f6f70;border-radius:16px;padding:26px">
+            <div style="font-size:16px;color:#ffffff;margin-bottom:10px;font-weight:500">Training is part of shipping</div>
+            <p style="font-size:15px;line-height:1.6;color:#b0eed3;margin:0">The same pattern from EY, where I delivered pipeline automation training to four country teams. A tool nobody was taught is a tool nobody uses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,40px)">
+    <div class="rv">
+      <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#12595a;margin:0 0 16px">Tech stack</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;max-width:70ch">
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Slack</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Python</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Cloud Platform</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">n8n</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Zapier</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Google Apps Script</span>
+        <span style="font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #dceceb;color:#185f60">Web interfaces</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #e8f7f6">
+    <div style="max-width:1200px;margin:0 auto;padding:36px clamp(20px,4vw,40px) 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="pmo-knowledge-agent.html" style="font-size:15px;color:#185f60">← Project 04: Project management office knowledge agent</a>
+      <a href="float-desserts.html" style="font-size:15px;color:#185f60">Project 06: Artificial intelligence strategy for a brand launch →</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
