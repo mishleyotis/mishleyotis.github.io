@@ -86,13 +86,20 @@ html.reveal-ready .rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform 
     padding:6px 20px 22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease,visibility .2s;}
   html.has-mmenu .mmenu.open{opacity:1;visibility:visible;transform:none;}
   .mmenu .mm-h{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin:18px 0 6px;}
-  .mmenu a.mm-l{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:10px 0;border-bottom:1px solid #edf5f4;
+  .mmenu .mm-l{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:10px 0;border-bottom:1px solid #edf5f4;
     font-size:16px;color:#1c4a4d;text-decoration:none;}
   .mmenu a.mm-l > span{display:flex;align-items:baseline;}
   .mmenu a.mm-l .num{flex:0 0 auto;font-family:'DM Mono',monospace;font-size:12px;color:#48706f;margin-right:10px;}
   .mmenu a.mm-l[aria-current="page"]{color:#12595a;font-weight:500;}
   .mmenu a.mm-l[aria-current="page"]::after{content:'';width:7px;height:7px;border-radius:50%;background:#27bbaf;flex:0 0 auto;}
-  .mmenu a.mm-cta{display:flex;align-items:center;justify-content:center;margin-top:20px;height:48px;border-radius:999px;background:#1c4a4d;color:#ffffff;font-size:15px;font-weight:500;text-decoration:none;}
+  .mmenu .mm-h:first-child{margin-top:12px;}
+  .mmenu button.mm-l{width:100%;background:none;border:0;border-bottom:1px solid #edf5f4;font:inherit;font-size:16px;color:#1c4a4d;cursor:pointer;text-align:left;}
+  .mmenu .chev{width:8px;height:8px;border-right:1.5px solid #48706f;border-bottom:1.5px solid #48706f;transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s ease;flex:0 0 auto;margin-right:4px;}
+  .mmenu .mm-drop[aria-expanded="true"] .chev{transform:rotate(-135deg) translate(-2px,-2px);}
+  .mmenu .mm-sub{padding-left:14px;border-left:2px solid #e8f7f6;margin:4px 0 4px 2px;}
+  .mmenu .mm-sub a.mm-l{font-size:15px;min-height:42px;}
+  .mmenu a.mm-contact{color:#12595a;font-weight:500;border-bottom:0;}
+  .mmenu a.mm-contact .hint{font-family:'DM Mono',monospace;font-size:11px;font-weight:400;letter-spacing:.04em;color:#48706f;}
 }
 @media (max-width:720px) and (prefers-reduced-motion:reduce){
   html.has-mmenu .mmenu,.mmenu-btn .bars::before,.mmenu-btn .bars::after{transition:none;}
