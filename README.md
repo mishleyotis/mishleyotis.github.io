@@ -38,7 +38,10 @@ land on the right section once layout settles. The reveal is opt-in: the
 script releases everything already on screen *before* arming the hidden state,
 so the first painted frame is complete and the page still reads with
 JavaScript disabled. Delete the script and the page stays readable; the
-animation is what's lost.
+animation is what's lost. It also builds the phone menu: below 720px the
+header collapses to the breadcrumb and a Menu button, and the panel lists the
+page's own sections, every page, the six projects and Contact. The page list
+lives in `mobilemenu()` in `site.js`, so a new page needs adding there.
 
 **The three prototype apps run in the page.** On `dma-insights.html` and
 `capability-intelligence.html` the browser-chrome card holds a real `<iframe>`

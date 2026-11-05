@@ -61,3 +61,39 @@ html.reveal-ready .rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform 
   background-size:cover;background-position:top center;background-repeat:no-repeat;}
 .liveframe>iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
 @media (max-width:700px){.liveframe{height:76vh;min-height:400px;}}
+
+/* Phone menu. Below 720px the header's wrapped nav took two or three lines
+   of a sticky bar (159px on the home page) and the Projects dropdown could
+   not open on touch. site.js stamps .has-mmenu on <html> and adds a Menu
+   button plus a panel; only then is the inline nav hidden, so a page without
+   JS still shows its links. Inline header styles need !important here. */
+.mmenu-btn,.mmenu{display:none;}
+@media (max-width:720px){
+  html.has-mmenu header > div{flex-wrap:nowrap!important;gap:12px!important;padding-top:10px!important;padding-bottom:10px!important;}
+  html.has-mmenu header > div > nav{display:none!important;}
+  html.has-mmenu header > div > :first-child{flex:1 1 auto;min-width:0;flex-wrap:nowrap!important;overflow:hidden;white-space:nowrap;}
+  html.has-mmenu header > div > :first-child > :last-child{overflow:hidden;text-overflow:ellipsis;min-width:0;}
+  html.has-mmenu header .navmenu{display:none!important;}
+  html.has-mmenu .mmenu-btn{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;height:40px;padding:0 16px;border-radius:999px;
+    border:0;background:#1c4a4d;color:#ffffff;font:500 14px/1 'DM Sans',sans-serif;cursor:pointer;}
+  .mmenu-btn .bars{position:relative;width:16px;height:10px;}
+  .mmenu-btn .bars::before,.mmenu-btn .bars::after{content:'';position:absolute;left:0;right:0;height:1.5px;border-radius:2px;background:currentColor;transition:transform .25s ease,top .25s ease;}
+  .mmenu-btn .bars::before{top:1px;} .mmenu-btn .bars::after{top:7.5px;}
+  .mmenu-btn[aria-expanded="true"] .bars::before{top:4.25px;transform:rotate(45deg);}
+  .mmenu-btn[aria-expanded="true"] .bars::after{top:4.25px;transform:rotate(-45deg);}
+  html.has-mmenu .mmenu{display:block;position:absolute;left:0;right:0;top:100%;background:#ffffff;border-bottom:1px solid #dceceb;
+    box-shadow:0 24px 48px rgba(28,74,77,.14);max-height:calc(100vh - 64px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+    padding:6px 20px 22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease,visibility .2s;}
+  html.has-mmenu .mmenu.open{opacity:1;visibility:visible;transform:none;}
+  .mmenu .mm-h{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#48706f;margin:18px 0 6px;}
+  .mmenu a.mm-l{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:10px 0;border-bottom:1px solid #edf5f4;
+    font-size:16px;color:#1c4a4d;text-decoration:none;}
+  .mmenu a.mm-l > span{display:flex;align-items:baseline;}
+  .mmenu a.mm-l .num{flex:0 0 auto;font-family:'DM Mono',monospace;font-size:12px;color:#48706f;margin-right:10px;}
+  .mmenu a.mm-l[aria-current="page"]{color:#12595a;font-weight:500;}
+  .mmenu a.mm-l[aria-current="page"]::after{content:'';width:7px;height:7px;border-radius:50%;background:#27bbaf;flex:0 0 auto;}
+  .mmenu a.mm-cta{display:flex;align-items:center;justify-content:center;margin-top:20px;height:48px;border-radius:999px;background:#1c4a4d;color:#ffffff;font-size:15px;font-weight:500;text-decoration:none;}
+}
+@media (max-width:720px) and (prefers-reduced-motion:reduce){
+  html.has-mmenu .mmenu,.mmenu-btn .bars::before,.mmenu-btn .bars::after{transition:none;}
+}

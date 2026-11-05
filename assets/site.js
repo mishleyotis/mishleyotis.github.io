@@ -96,7 +96,59 @@
     cards.forEach(function (c) { io.observe(c); });
   }
 
-  function init() { reveal(); tilt(); liveframes(); setTimeout(anchor, 60); }
+  /* 4. phone menu - one consistent Menu button and panel below 720px.
+     Pages, the six projects, this page's own sections (case studies) and
+     Contact, built from a fixed list so every page offers the same routes. */
+  function mobilemenu() {
+    var header = document.querySelector('header');
+    var bar = header && header.firstElementChild;
+    if (!bar || !bar.querySelector('nav')) return;
+    var here = (location.pathname.split('/').pop() || 'index.html');
+    var pages = [['index.html', 'Home'], ['my-story.html', 'My story'], ['projects.html', 'Projects'],
+                 ['volunteer-work.html', 'Volunteer work'], ['tech-stack.html', 'Tech stack']];
+    var projects = [['dma-insights.html', 'DMA Insights'], ['dma-plugin.html', 'The 47-agent assessment plugin'],
+                    ['capability-intelligence.html', 'Capability Intelligence Agent'],
+                    ['pmo-knowledge-agent.html', 'Project management office knowledge agent'],
+                    ['automation-fabric.html', 'Scheduling bot and automation'], ['float-desserts.html', 'Brand launch strategy']];
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function link(href, label, num) {
+      var cur = href === here ? ' aria-current="page"' : '';
+      return '<a class="mm-l" href="' + href + '"' + cur + '><span>' + (num ? '<span class="num">' + num + '</span>' : '') + esc(label) + '</span></a>';
+    }
+    var html = '';
+    var own = [].slice.call(bar.querySelectorAll('nav a[href^="#"]')).filter(function (a) { return a.getAttribute('href') !== '#contact'; });
+    if (own.length) {
+      html += '<div class="mm-h">On this page</div>';
+      own.forEach(function (a) { html += link(a.getAttribute('href'), a.textContent.trim()); });
+    }
+    html += '<div class="mm-h">Pages</div>';
+    pages.forEach(function (p) { html += link(p[0], p[1]); });
+    html += '<div class="mm-h">Projects</div>';
+    projects.forEach(function (p, i) { html += link(p[0], p[1], '0' + (i + 1)); });
+    html += '<a class="mm-cta" href="' + (document.getElementById('contact') ? '#contact' : 'index.html#contact') + '">Contact</a>';
+
+    var panel = document.createElement('div');
+    panel.className = 'mmenu'; panel.id = 'mmenu'; panel.innerHTML = html;
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'mmenu-btn';
+    btn.setAttribute('aria-controls', 'mmenu'); btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<span class="bars" aria-hidden="true"></span><span>Menu</span>';
+    bar.appendChild(btn);
+    header.appendChild(panel);
+    document.documentElement.classList.add('has-mmenu');
+
+    function set(open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.lastChild.textContent = open ? 'Close' : 'Menu';
+      panel.classList.toggle('open', open);
+    }
+    btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    document.addEventListener('click', function (e) { if (!header.contains(e.target)) set(false); });
+  }
+
+  function init() { mobilemenu(); reveal(); tilt(); liveframes(); setTimeout(anchor, 60); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
