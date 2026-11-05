@@ -1,6 +1,6 @@
 # mishleyotis.github.io
 
-Portfolio of Mishley Otiende — AI engineer, financial services.
+Portfolio of Mishley Otiende — AI Business Analyst, financial services.
 Live at <https://mishleyotis.github.io/>.
 
 A static site: pure HTML, CSS and one small script. No build step, no package
