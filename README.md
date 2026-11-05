@@ -54,6 +54,12 @@ what keeps those pages light.
 replaces the document. They're byte-sensitive — edit the source they were
 exported from, not these files.
 
+**Afri-SPARC posters live in `assets/afrisparc/`.** `originals/` holds the
+full-resolution PNGs as uploaded. `thumb/` (720×900) feeds the grid on
+`volunteer-work.html` and `full/` (2160×2700) feeds the in-page viewer; both
+are WebP copies rendered from the originals. To add a poster, drop the PNG in
+`originals/`, render both sizes, and add a `<figure>` to the gallery.
+
 **`.nojekyll` is intentional.** Nothing here needs Jekyll, and bypassing it
 keeps GitHub Pages from reinterpreting paths.
 
