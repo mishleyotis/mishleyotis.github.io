@@ -120,12 +120,20 @@
     if (own.length) {
       html += '<div class="mm-h">On this page</div>';
       own.forEach(function (a) { html += link(a.getAttribute('href'), a.textContent.trim()); });
+      html += '<div class="mm-h">Pages</div>';
     }
-    html += '<div class="mm-h">Pages</div>';
-    pages.forEach(function (p) { html += link(p[0], p[1]); });
-    html += '<div class="mm-h">Projects</div>';
-    projects.forEach(function (p, i) { html += link(p[0], p[1], '0' + (i + 1)); });
-    html += '<a class="mm-cta" href="' + (document.getElementById('contact') ? '#contact' : 'index.html#contact') + '">Contact</a>';
+    var onProject = false; // start collapsed everywhere so Contact stays in view
+    pages.forEach(function (p) {
+      if (p[0] !== 'projects.html') { html += link(p[0], p[1]); return; }
+      html += '<button type="button" class="mm-l mm-drop" aria-expanded="' + onProject + '" aria-controls="mm-projects">' +
+              '<span>Projects</span><span class="chev" aria-hidden="true"></span></button>' +
+              '<div class="mm-sub" id="mm-projects"' + (onProject ? '' : ' hidden') + '>' +
+              link('projects.html', 'All six projects');
+      projects.forEach(function (q, i) { html += link(q[0], q[1], '0' + (i + 1)); });
+      html += '</div>';
+    });
+    var contact = document.getElementById('contact') ? '#contact' : 'index.html#contact';
+    html += '<a class="mm-l mm-contact" href="' + contact + '"><span>Contact</span><span class="hint">Email · phone · LinkedIn</span></a>';
 
     var panel = document.createElement('div');
     panel.className = 'mmenu'; panel.id = 'mmenu'; panel.innerHTML = html;
@@ -143,6 +151,12 @@
       panel.classList.toggle('open', open);
     }
     btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+    var drop = panel.querySelector('.mm-drop'), sub = panel.querySelector('.mm-sub');
+    if (drop) drop.addEventListener('click', function () {
+      var open = drop.getAttribute('aria-expanded') !== 'true';
+      drop.setAttribute('aria-expanded', open ? 'true' : 'false');
+      sub.hidden = !open;
+    });
     panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
     document.addEventListener('click', function (e) { if (!header.contains(e.target)) set(false); });
