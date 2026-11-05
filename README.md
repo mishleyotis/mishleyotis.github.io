@@ -63,6 +63,13 @@ full-resolution PNGs as uploaded. `thumb/` (720×900) feeds the grid on
 are WebP copies rendered from the originals. To add a poster, drop the PNG in
 `originals/`, render both sizes, and add a `<figure>` to the gallery.
 
+**Bump the `?v=` tag when `site.css` or `site.js` changes.** Every page
+links them as `assets/site.css?v=…` and `assets/site.js?v=…`. GitHub Pages
+lets browsers cache files for 10 minutes and phones often hold them longer,
+so a new tag is what makes visitors fetch the new version. Use the first 8
+characters of `cat assets/site.css assets/site.js | md5sum` and replace the old
+tag in every `.html` file, including `prototype/` and `docs/`.
+
 **`.nojekyll` is intentional.** Nothing here needs Jekyll, and bypassing it
 keeps GitHub Pages from reinterpreting paths.
 
